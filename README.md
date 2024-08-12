@@ -1,17 +1,17 @@
-#A Simple FireBase Connection and Data adding data to Database in FireBase
+# A Simple FireBase Connection and Data adding data to Database in FireBase
 
-##To implement this 
+## To implement this 
 
-###1. clone this repository using the below command:
+### 1. clone this repository using the below command:
 
 ``` git clone "https://github.com/sonalisrisivani/Firebase_Db_connection" ```
 
-###2. Now, Go to Firebase Console and and Create a Project and name it (I named it Demo). 
+### 2. Now, Go to Firebase Console and and Create a Project and name it (I named it Demo). 
 
-###3. In Project section -> Go to Settings in Project Overview -> Project Settings -> your apps -> web icon </> in bottom -> appname- (i gave demo) -> set firebase hosting -> register app -> Add firebase SDK -> Here im using js, so -> use script tag -> copy the firebase cnfig which is displayed 
+### 3. In Project section -> Go to Settings in Project Overview -> Project Settings -> your apps -> web icon </> in bottom -> appname- (i gave demo) -> set firebase hosting -> register app -> Add firebase SDK -> Here im using js, so -> use script tag -> copy the firebase cnfig which is displayed 
 
 
-```<script type="module">
+``` <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
@@ -33,15 +33,15 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-</script>```
+</script> ```
 
 
 
-###4. Copy that snippet and paste in the html file 
+### 4. Copy that snippet and paste in the html file 
 
-###5. After Creating project , Create Database -> Firebase project -> build -> Firestore database -> Create database -> Enter Location -> Test mode -> Next -> Done. 
+### 5. After Creating project , Create Database -> Firebase project -> build -> Firestore database -> Create database -> Enter Location -> Test mode -> Next -> Done. 
 
-###6. Start collections -> Document ID -> auto generate -> You can create as many collections as you want(I created a collection called login) ->  set columns/attributes for each of the collections with their respective DataTypes (I made 2 fields in the login collection , user_name : String and password : String) 
+### 6. Start collections -> Document ID -> auto generate -> You can create as many collections as you want(I created a collection called login) ->  set columns/attributes for each of the collections with their respective DataTypes (I made 2 fields in the login collection , user_name : String and password : String) 
 
 
 
