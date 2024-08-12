@@ -30,5 +30,98 @@
 
 </center>
 
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBAKkq__h1yq14Fey8KBPj8SSPXZ-3t0h0",
+    authDomain: "fir-26ab4.firebaseapp.com",
+    projectId: "fir-26ab4",
+    storageBucket: "fir-26ab4.appspot.com",
+    messagingSenderId: "841459619381",
+    appId: "1:841459619381:web:f22d2efd5f73b5ca44837c",
+    measurementId: "G-1MWSDDM5MJ"
+  };
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+ 
+import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+const firestore = getFirestore(app);
+
+//connected db collection
+const db= collection(firestore,"login");
+
+//handle form submission
+document.addEventListener('DOMContentLoaded', ()=>
+{
+ //Handle register form
+ document.getElementById('f2').addEventListener('submit',async(event)=>
+ {
+  event.preventDefault();
+  const username = document.getElementById('reg_un').value;
+  const password = document.getElementById('reg_pw').value;
+
+  //to check if already username exists
+  const q= query(db,where("user_name","==",username));
+  const querySnapshot = await getDocs(q);
+  if(!querySnapshot.empty)
+  {
+   alert('Username already exists !!');
+   return;
+  }  
+  //else 
+  try
+  {
+   await addDoc(db,
+   {
+    user_name :username,
+    password :password
+   });
+   alert('Registered Succesfullly !!');
+   event.target.reset();
+  }
+  catch(error)
+  {
+   alert('Error: '+error.message);
+  }
+ });
+});
+
+
+document.addEventListener('DOMContentLoaded', ()=>
+{
+ //Handle login form
+ document.forms['f1'].addEventListener('submit',async(event)=>
+ {
+  event.preventDefault();
+  const un = document.getElementById('un').value;
+  const pw = document.getElementById('pw').value;
+
+  // to check details are corrct
+  const qu = query(db, where("user_name","==",un),where("password","==",pw));
+  const querySnapshot = await getDocs(qu);
+  if(!querySnapshot.empty)
+  {
+   alert('Logged in Succesfullly !!');
+   event.target.reset();
+  }
+  else
+  {
+   alert('Invalid username or pw .Try Again !!');
+  }
+  
+ });
+});
+
+
+
+</script>
 </body>
 </html>

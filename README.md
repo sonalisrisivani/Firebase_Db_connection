@@ -1,11 +1,13 @@
-A Simple FireBase Connection and Data adding data to Database in FireBase
+#A Simple FireBase Connection and Data adding data to Database in FireBase
 
-To implement this ,clone this repository using the below command:
-git clone "https://github.com/sonalisrisivani/Firebase_Db_connection"
+##To implement this 
 
-Now, Go to Firebase Console and and Create a Project and name it (I named it Demo).
+###1. clone this repository using the below command:
+** git clone "https://github.com/sonalisrisivani/Firebase_Db_connection" **
 
-In Project section -> Go to Settings in Project Overview -> Project Settings -> your apps -> web icon </> in bottom -> appname- (i gave demo) -> set firebase hosting -> register app -> Add firebase SDK -> Here im using js, so -> use script tag -> copy the firebase cnfig which is displayed
+###2. Now, Go to Firebase Console and and Create a Project and name it (I named it Demo). 
+
+###3. In Project section -> Go to Settings in Project Overview -> Project Settings -> your apps -> web icon </> in bottom -> appname- (i gave demo) -> set firebase hosting -> register app -> Add firebase SDK -> Here im using js, so -> use script tag -> copy the firebase cnfig which is displayed 
 
 
 <script type="module">
@@ -34,10 +36,32 @@ In Project section -> Go to Settings in Project Overview -> Project Settings -> 
 
 
 
-Copy that snippet and paste in the html file 
+###4. Copy that snippet and paste in the html file 
 
-After Creating project , Create Database -> Firebase project -> build -> Firestore database -> Create database -> Enter Location -> Test mode -> Next -> Done.
+###5. After Creating project , Create Database -> Firebase project -> build -> Firestore database -> Create database -> Enter Location -> Test mode -> Next -> Done. 
 
-Start collections -> Document ID -> auto generate -> You can create as many collections as you want(I created a collection called login) ->  set columns/attributes for each of the collections with their respective DataTypes (I made 2 fields in the login collection , user_name : String and password : String)
+###6. Start collections -> Document ID -> auto generate -> You can create as many collections as you want(I created a collection called login) ->  set columns/attributes for each of the collections with their respective DataTypes (I made 2 fields in the login collection , user_name : String and password : String) 
 
 
+
+## Features
+
+-**User Registration**: users can reg by providing username and pw,it checks if it is already existed and if it don't , data will be sent to database
+-**User Login**: users can login with their registered credentials , we perform fetching operation from db and ceck , if details matches, then alert box will display that logged in successfully.
+-**Firebase Integration**: uses firebase firestore for storing and validating user credentials
+
+
+## Technologies Used
+
+- **HTML**: Structure of the web page.
+- **CSS**: Styling the web page.
+- **JavaScript**: Handling form submissions and Firebase interactions.
+- **Firebase**: Used for database management and authentication.
+
+## Database Format
+
+-**Project name**: demo
+-**Collection name**: login
+-**Fields and their Datatypes**: 
+   1. user_name (String)
+   2. password (String)
